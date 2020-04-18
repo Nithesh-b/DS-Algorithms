@@ -11,8 +11,8 @@ pipeline {
 	post {
 		success{
 			sh '''
-			git pull  https://github.com/Nithesh-b/lab.git master
-			git checkout master
+			git pull  https://github.com/Nithesh-b/lab.git firstbranch
+			git checkout firstbranch
 			git reset HEAD^
 			git remote set-url origin git@github.com:nithesh-b/lab.git
 			git push -f origin master --no-verify
