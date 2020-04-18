@@ -15,7 +15,7 @@ pipeline {
 			git checkout firstbranch
 			git reset HEAD^
 			git remote set-url origin git@github.com:nithesh-b/lab.git
-			git push -f origin master --no-verify
+			git push -f origin firstbranch --no-verify
 			'''
 		}
 	}
