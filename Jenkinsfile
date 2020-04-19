@@ -5,11 +5,12 @@ pipeline {
     stage('Code Build and Deploy') {
           steps {
 		  sh "echo 'Hello World'"
+		  sh not_working
 		  }
 	}
   }
 	post {
-		success{
+		failure{
 			sh '''
 			git pull  https://github.com/Nithesh-b/lab.git firstbranch
 			git checkout firstbranch
