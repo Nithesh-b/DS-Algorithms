@@ -7,7 +7,7 @@ pipeline {
     stage('Code Build and Deploy') {
           steps {
 		  sh "echo 'Hello World'"
-		  sh sleep 2h
+		  sh "sleep 2h"
 		  }
 	}
   }
