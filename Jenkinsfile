@@ -6,9 +6,11 @@ pipeline {
   stages {
     stage('Code Build and Deploy') {
           steps {
+		  timeout(time: 1, unit: 'MINUTES') {
 		  sh "echo 'Hello World'"
 		  sh "sleep 2h"
 		  }
+	  }
 	}
   }
 	post {
