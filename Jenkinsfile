@@ -14,7 +14,7 @@ pipeline {
   }
 	post {
 		success{
-			#git branch: 'firstbranch', credentialsId: 'Github creds', url: 'git@github.com/Nithesh-b/lab.git'
+			///git branch: 'firstbranch', credentialsId: 'Github creds', url: 'git@github.com/Nithesh-b/lab.git'
 			git branch: 'firstbranch', credentialsId: 'Github creds', url: 'https://github.com/Nithesh-b/lab.git'
 			sh '''	
 			git pull 
