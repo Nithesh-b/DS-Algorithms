@@ -18,9 +18,10 @@ pipeline {
 			git branch: 'firstbranch', credentialsId: 'Github creds', url: 'https://github.com/Nithesh-b/lab.git'
 			sh '''	
 			git checkout firstbranch
-			git reset HEAD^
-			git remote set-url origin git@github.com:nithesh-b/lab.git
-			git push -f origin firstbranch --no-verify
+			git log --oneline
+			#git reset HEAD^
+			#git remote set-url origin git@github.com:nithesh-b/lab.git
+			#git push -f origin firstbranch --no-verify
 			'''
 		}
 	}
