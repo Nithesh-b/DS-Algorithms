@@ -8,13 +8,12 @@ pipeline {
           steps {
 		  timeout(time: 1, unit: 'MINUTES') {
 		  sh "echo 'Hello World'"
-		  sh "sleep 2h"
 		  }
 	  }
 	}
   }
 	post {
-		failure{
+		success{
 			git branch: 'firstbranch', credentialsId: 'Github creds', url: 'git@github.com/Nithesh-b/lab.git'
 			sh '''	
 			git pull
