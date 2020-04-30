@@ -14,9 +14,10 @@ pipeline {
   }
 	post {
 		success{
-			git branch: 'firstbranch', credentialsId: 'Github creds', url: 'git@github.com/Nithesh-b/lab.git'
+			#git branch: 'firstbranch', credentialsId: 'Github creds', url: 'git@github.com/Nithesh-b/lab.git'
+			git branch: 'firstbranch', credentialsId: 'Github creds', url: 'https://github.com/Nithesh-b/lab.git'
 			sh '''	
-			git pull
+			git pull 
 			git checkout firstbranch
 			git reset HEAD^
 			git remote set-url origin git@github.com:nithesh-b/lab.git
