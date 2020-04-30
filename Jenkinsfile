@@ -15,18 +15,16 @@ pipeline {
 	post {
 		success{
 			///git branch: 'firstbranch', credentialsId: 'Github creds', url: 'git@github.com/Nithesh-b/lab.git'
-			
-			git branch: 'firstbranch', credentialsId: 'Github creds', url: 'https://github.com/Nithesh-b/lab.git'
-			sh '''
-			git clone https://github.com/Nithesh-b/lab.git
-			git checkout firstbranch
-			git log --oneline
-			git reset HEAD^
-			git log --oneline
-			git remote set-url origin git@github.com:nithesh-b/lab.git
-			git push -f origin firstbranch --no-verify
-			'''
-			}
+withCredentials([usernamePassword(credentialsId: 'Github creds', usernameVariable: 'USER', passwordVariable: 'PASS')]) {
+                    script {
+                        env.encodedPass=URLEncoder.encode(PASS, "UTF-8")
+                    }
+                    sh 'git clone https://${USER}:${encodedPass}@github.com/Nithesh-b/lab.git'
+		    sh 'git checkout firstbranch'
+                    sh 'git add .'
+                    sh 'git commit -m "foobar" '
+                    sh 'git push'
+                } 
 		
 	}
 }
