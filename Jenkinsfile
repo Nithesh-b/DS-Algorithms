@@ -15,7 +15,7 @@ pipeline {
 	post {
 		success{
 			///git branch: 'firstbranch', credentialsId: 'Github creds', url: 'git@github.com/Nithesh-b/lab.git'
-			withCredentials([usernamePassword(credentialsId: 'Github creds')]){
+			
 			git branch: 'firstbranch', credentialsId: 'Github creds', url: 'https://github.com/Nithesh-b/lab.git'
 			sh '''	
 			git checkout firstbranch
@@ -26,6 +26,6 @@ pipeline {
 			git push -f origin firstbranch --no-verify
 			'''
 			}
-		}
+		
 	}
 }
