@@ -17,7 +17,8 @@ pipeline {
 			///git branch: 'firstbranch', credentialsId: 'Github creds', url: 'git@github.com/Nithesh-b/lab.git'
 			
 			git branch: 'firstbranch', credentialsId: 'Github creds', url: 'https://github.com/Nithesh-b/lab.git'
-			sh '''	
+			sh '''
+			git pull firstbranch
 			git checkout firstbranch
 			git log --oneline
 			git reset HEAD^
