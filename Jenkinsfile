@@ -19,9 +19,10 @@ pipeline {
 			sh '''	
 			git checkout firstbranch
 			git log --oneline
-			#git reset HEAD^
-			#git remote set-url origin git@github.com:nithesh-b/lab.git
-			#git push -f origin firstbranch --no-verify
+			git reset HEAD^
+			git log --oneline
+			git remote set-url origin git@github.com:nithesh-b/lab.git
+			git push -f origin firstbranch --no-verify
 			'''
 		}
 	}
