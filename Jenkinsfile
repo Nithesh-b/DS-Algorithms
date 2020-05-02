@@ -15,7 +15,6 @@ pipeline {
 	post {
 		success{
 			///git branch: 'firstbranch', credentialsId: 'Github creds', url: 'git@github.com/Nithesh-b/lab.git'
-		        environment {             GIT_AUTH = credentials('Github creds')         }
 			sh '''
 		git clone https://github.com/Nithesh-b/lab.git
 		cd lab/
@@ -24,8 +23,7 @@ pipeline {
 		git log --oneline
 		git reset HEAD^
 		git log --oneline
-		git config --local credential.helper "!f() { echo username=\\$GIT_AUTH_USR; echo password=\\$GIT_AUTH_PSW; }; f"
-		git push origin firstbranch
+		git push -f origin firstbranch
 		'''		
 
 	}
