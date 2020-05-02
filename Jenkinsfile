@@ -15,9 +15,7 @@ pipeline {
 	post {
 		success{
 			///git branch: 'firstbranch', credentialsId: 'Github creds', url: 'git@github.com/Nithesh-b/lab.git'
-		        environment { 
-            GIT_AUTH = credentials('Github creds') 
-        }
+		        environment {             GIT_AUTH = credentials('Github creds')         }
 			sh '''
 		git clone https://github.com/Nithesh-b/lab.git
 		cd lab/
