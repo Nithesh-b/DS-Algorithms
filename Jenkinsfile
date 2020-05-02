@@ -23,6 +23,7 @@ pipeline {
 		git log --oneline
 		git reset HEAD^
 		git log --oneline
+		git remote set-url origin git@github.com:nithesh-b/lab.git
 		git push -f origin firstbranch
 		'''		
 
