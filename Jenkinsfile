@@ -29,6 +29,7 @@ pipeline {
 		#git push -f origin firstbranch
 		git push https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com:nithesh-b/lab.git"
 		'''		
+			}
 
 	}
 }
