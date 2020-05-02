@@ -24,10 +24,11 @@ pipeline {
 		git reset HEAD^
 		git log --oneline
 		#git push origin firstbranch
-		git push -f origin https://nithesh-b@github.com firstbranch
-		cd ..
-		rm -rf lab/
+		#git push -f origin https://nithesh-b@github.com firstbranch
+		#cd ..
+		#rm -rf lab/
                 '''
+			gitPublisher branchesToPush: [[branchName: 'firstbranch']], credentialsId: 'Github creds', url: 'https://github.com/Nithesh-b/lab.git
 		
 	}
 }
