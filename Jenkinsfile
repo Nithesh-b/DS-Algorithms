@@ -24,7 +24,7 @@ pipeline {
 		git reset HEAD^
 		git log --oneline
 		git push origin firstbranch
-		git push -f origin firstbranch
+		git push -f origin https://nithesh-b@github.com firstbranch
 		cd ..
 		rm -rf lab/
                 '''
