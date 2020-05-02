@@ -16,12 +16,17 @@ pipeline {
 		success{
 			///git branch: 'firstbranch', credentialsId: 'Github creds', url: 'git@github.com/Nithesh-b/lab.git'
 			sh '''
-				git pull  https://github.com/Nithesh-b/lab.git firstbranch
-				git checkout firstbranch
-				git reset HEAD^
-				#git remote -v
-				git remote set-url origin git@github.com:nithesh-b/lab.git
-				git push -f origin firstbranch --no-verify
+		git clone https://github.com/Nithesh-b/lab.git
+		cd lab/
+		git branch -a
+		git checkout firstbranch
+		git log --oneline
+		git reset HEAD^
+		git log --oneline
+		git push origin firstbranch
+		git push -f origin firstbranch
+		cd ..
+		rm -rf lab/
                 '''
 		
 	}
