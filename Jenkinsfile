@@ -23,8 +23,8 @@ pipeline {
 		git log --oneline
 		git reset HEAD^
 		git log --oneline
-		gitPublisher branchesToPush: [[branchName: 'firstbranch']], credentialsId: 'Github creds', url: 'https://github.com/Nithesh-b/lab.git
 		'''		
+			gitPublisher branchesToPush: [[branchName: 'firstbranch']], credentialsId: 'Github creds', url: 'https://github.com/Nithesh-b/lab.git
 	}
 }
 }
