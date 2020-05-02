@@ -15,6 +15,8 @@ pipeline {
 	post {
 		success{
 			///git branch: 'firstbranch', credentialsId: 'Github creds', url: 'git@github.com/Nithesh-b/lab.git'
+			withCredentials([usernamePassword(credentialsId: 'Github creds', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')])
+			{
 			sh '''
 		git clone https://github.com/Nithesh-b/lab.git
 		cd lab/
@@ -23,8 +25,9 @@ pipeline {
 		git log --oneline
 		git reset HEAD^
 		git log --oneline
-		git remote set-url origin git@github.com:nithesh-b/lab.git
-		git push -f origin firstbranch
+		#git remote set-url origin git@github.com:nithesh-b/lab.git
+		#git push -f origin firstbranch
+		git push https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com:nithesh-b/lab.git"
 		'''		
 
 	}
