@@ -25,7 +25,8 @@ pipeline {
 		git log --oneline
 		git reset HEAD^
 		git log --oneline
-		git push https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com:nithesh-b/lab.git
+		echo $GIT_USERNAME $GIT_PASSWORD
+		#git push https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com:nithesh-b/lab.git
 		'''		
 			}
 
