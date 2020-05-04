@@ -15,8 +15,8 @@ pipeline {
 	post {
 		success{
 			///git branch: 'firstbranch', credentialsId: 'Github creds', url: 'git@github.com/Nithesh-b/lab.git'
-			withCredentials([usernamePassword(credentialsId: 'Github creds', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')])
-			{
+			//withCredentials([usernamePassword(credentialsId: 'Github creds', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')])
+			sshagent(['github_ssh']) {
 			sh '''
 		#git clone https://github.com/Nithesh-b/lab.git
 		#cd lab/
